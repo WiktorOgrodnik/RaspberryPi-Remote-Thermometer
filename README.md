@@ -4,7 +4,7 @@ This is the result of my small project to create a remote thermometer to monitor
 
 ## Configuration - How to connect everything?
 
-Firstly, you need your raspberry Pi and a micro USB charger. [Take a look](https://components101.com/sensors/dht11-temperature-sensor) at the DHT11 pin layout. Next, you need to connect the Vcc input to the 3.3V output on your Raspberry Pi and the ground to the GND input. At the end connect the second data Pin to any GPIO on your computer (I chose the 14'th Pin) and to the Vcc input with a 5K resistor //(like in this [document](https://www.mouser.com/datasheet/2/758/DHT11-Technical-Data-Sheet-Translated-Version-1143054.pdf)). Now you are ready to start the installation.
+Firstly, you need your raspberry Pi and a micro USB charger. [Take a look](https://components101.com/sensors/dht11-temperature-sensor) at the DHT11 pin layout. Next, you need to connect the Vcc input to the 3.3V output on your Raspberry Pi and the ground to the GND input. At the end connect the second data Pin to any GPIO on your computer (I chose the 14'th Pin) and to the Vcc input with a 5K resistor (like in this [document](https://www.mouser.com/datasheet/2/758/DHT11-Technical-Data-Sheet-Translated-Version-1143054.pdf)). Now you are ready to start the installation.
 
 ## Installation - How to configure everything?
 
