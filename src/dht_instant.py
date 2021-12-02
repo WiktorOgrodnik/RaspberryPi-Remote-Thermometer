@@ -19,7 +19,7 @@ dhtDevice = adafruit_dht.DHT11(board.D14)
 # but it will not work in CircuitPython.
 # dhtDevice = adafruit_dht.DHT22(board.D18, use_pulseio=False)
 
-FILENAME = '/home/pi/data_now.txt'
+FILENAME = '/home/pi/data_now.txt' # File to save live data
 
 while True:
     try:
