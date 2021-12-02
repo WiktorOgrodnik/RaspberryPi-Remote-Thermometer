@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermometer Panel</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <h1 id="main-title">Garage Thermometer</h1>
+    <div class="panel" id="temp">
+        <h2 class="sub-title">Current conditions</h2>
+        <div id="current-temp">
+            Current temperature: {{temperature}}°C <br>
+            Current humidity: {{humidity}}%
+        </div>
+        <span id="last-update">Last updated: {{date}}</span>
+    </div>
+
+    <div class="panel" id="history">
+        <h2 class="sub-title">History</h2>
+        {{history}}
+    </div>
+</body>
+</html>
