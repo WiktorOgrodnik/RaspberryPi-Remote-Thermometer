@@ -1,6 +1,6 @@
 # Remote thermometer for Raspberry Pi Zero with DHT11
 
-This is the result of my small project to create a remote thermometer to monitor the temperature in my garage and display collected data on a simple webpage. To make this I used the cheapest Raspberry Pi Zero W and DHT11 thermometer, but you can use any other Single-board computer or thermometer (such as DHT22).
+This is the result of my small project to create a remote thermometer to monitor the temperature in my garage and display collected data on a simple webpage. To make this I used the cheapest Raspberry Pi Zero W and DHT11 thermometer, but you can use any other single-board computer or thermometer (such as DHT22).
 
 ## Configuration - How to connect everything?
 
@@ -33,6 +33,7 @@ sudo apt update && sudo apt install nodejs -y
 ```
 
 To install DHT library provided by adadruit you need to type:
+
 ```bash
 pip3 install adafruit-circuitpython-dht
 sudo apt-get install libgpiod2
@@ -62,7 +63,7 @@ sudo chmod +x logger.py
 sudo chmod +x dht_instant.py
 ```
 
-In the file dht_instant.py, you can choose the path to the live data file and you can change GPIO PIN which you chose to connect to DHT11. You can also change the function name to DHT22 in order to use that device.
+In the file dht_instant.py, you can choose the path to the live data file and you can change GPIO PIN which you chose to connect to DHT11. You can also change the device variable to 'DHT22' in order to use that device.
 
 In the file logger.py, you can choose paths to the live data file and the history data file and you can set a maximal number of entries in the history file.
 
