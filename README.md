@@ -16,6 +16,7 @@ You will need:
 
 - Python 3.x
 - Node.js 16.x
+- DHT library
 
 To install python just type
 
@@ -29,6 +30,12 @@ On newer pi's you can just type:
 
 ```bash
 sudo apt update && sudo apt install nodejs -y
+```
+
+To install DHT library provided by adadruit you need to type:
+```bash
+pip3 install adafruit-circuitpython-dht
+sudo apt-get install libgpiod2
 ```
 
 Now you need to configure crontabs. By default my device will log data to history every hour and update "live" data every 10 minutes (it is done this way because reading data from DHT may take up to a few seconds and we don't want to wait so long on every page refresh).

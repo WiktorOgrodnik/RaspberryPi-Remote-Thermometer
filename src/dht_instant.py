@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Some code below is provided by Adafruit https://github.com/adafruit/DHT-sensor-library
+# Some code below is provided by Adafruit https://learn.adafruit.com/dht-humidity-sensing-on-raspberry-pi-with-gdocs-logging/python-setup
 
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
@@ -11,8 +11,16 @@ import sys
 import board
 import adafruit_dht
 
+device = 'DHT11'
+
 # Initial the dht device, with data pin connected to:
-dhtDevice = adafruit_dht.DHT11(board.D14)
+dhtDevice11 = adafruit_dht.DHT11(board.D14)
+dhtDevice22 = adafruit_dht.DHT22(board.D14)
+
+dhtDevice = dhtDevice11
+
+if device == 'DHT22':
+    dhtDevice = dhtDevice22 
 
 # you can pass DHT22 use_pulseio=False if you wouldn't like to use pulseio.
 # This may be necessary on a Linux single board computer like the Raspberry Pi,

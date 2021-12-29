@@ -2,10 +2,10 @@
 
 from datetime import datetime
 
-FILENAME = '/home/pi/temps.txt'
+FILENAME = './temps.txt'
 MAXLINES = 100
 
-INPUT_FILENAME = '/home/pi/data_now.txt'
+INPUT_FILENAME = './data_now.txt'
 
 def file_len(fname):
     return sum(1 for _ in open (fname))
@@ -29,7 +29,7 @@ now = datetime.now().isoformat()
 file = open(INPUT_FILENAME, 'r')
 
 num_lines = file_len(FILENAME)
-entry = '{} {} {}'.format(now, int(file.readline()), int(file.readline()))
+entry = '{} {} {}'.format(now, float(file.readline()), float(file.readline()))
 file.close()
 
 file_append(FILENAME, entry, num_lines < MAXLINES)
