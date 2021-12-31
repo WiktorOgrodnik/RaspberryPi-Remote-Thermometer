@@ -8,12 +8,23 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="chart.js"></script>
 </head>
 <body>
     <h1 id="main-title">Garage Thermometer</h1>
-    <div class="panel" id="temp">
-        <h2 class="sub-title">Current conditions</h2>
+    
+    <div class="panel-half" id="temp">
+        <h2 class="sub-title">Current conditions - outdoor</h2>
+        <div id="current-temp">
+            Current temperature: {{temperature-outdoor}}°C <br>
+            Current humidity: {{humidity-outdoor}}%
+        </div>
+        <span id="last-update">Last updated: {{date-outdoor}}</span>
+    </div>
+    <div class="panel-half" id="temp">
+        <h2 class="sub-title">Current conditions - garage</h2>
         <div id="current-temp">
             Current temperature: {{temperature}}°C <br>
             Current humidity: {{humidity}}%
@@ -23,7 +34,25 @@
 
     <div class="panel" id="history">
         <h2 class="sub-title">History</h2>
-        {{history}}
+        <canvas id="chart"></canvas>
     </div>
+
+    <div class="panel" id="device">
+        <h2 class="sub-title">Device</h2>
+        <div id="device-panel-left">
+            <img id="computer-image" src="img/rpi.png" alt="Raspberry Pi Zero WH">
+        </div>
+        <div id="device-panel-right">
+            <span id="computer-name">Name: Raspberry Pi Zero WH</span><br>
+            <span>Processor: Broadcom BCM2835 @ 1GHz</span><br>
+            <span>Processor speed: {{speed}} GHz</span><br>
+            <span>Processor temperature: {{proc_tmep}}°C</span><br>
+            <span>Processor volts: {{volts}}V</span><br>
+        </div>
+    </div>
+
+    <div id="histemp_in" style="display: none;">{{histemp_in}}</div>
+    <div id="histemp_out" style="display: none;">{{histemp_out}}</div>
+    <div id="hisdate" style="display: none;">{{hisdate}}</div>
 </body>
 </html>

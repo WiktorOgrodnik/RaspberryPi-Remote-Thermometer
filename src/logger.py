@@ -2,10 +2,12 @@
 
 from datetime import datetime
 
-FILENAME = './temps.txt'
+OUTPUT_FILENAME_INDOOR = './temps.txt'
+OUTPUT_FILENAME_OUTDOOR = './temps_outdoor.txt'
 MAXLINES = 100
 
-INPUT_FILENAME = './data_now.txt'
+INPUT_FILENAME_INDOOR = './data_now.txt'
+INPUT_FILENAME_OUTDOOR = './weather_now.txt'
 
 def file_len(fname):
     return sum(1 for _ in open (fname))
@@ -26,10 +28,19 @@ def file_append(fname, entry, append = True):
     file.close()
 
 now = datetime.now().isoformat()
-file = open(INPUT_FILENAME, 'r')
+file_indoor = open(INPUT_FILENAME_INDOOR, 'r')
+file_outdoor = open(INPUT_FILENAME_OUTDOOR, 'r')
 
-num_lines = file_len(FILENAME)
-entry = '{} {} {}'.format(now, float(file.readline()), float(file.readline()))
-file.close()
+#indoor
+num_lines = file_len(OUTPUT_FILENAME_INDOOR)
+entry = '{} {} {}'.format(now, float(file_indoor.readline()), float(file_indoor.readline()))
+file_indoor.close()
 
-file_append(FILENAME, entry, num_lines < MAXLINES)
+file_append(OUTPUT_FILENAME_INDOOR, entry, num_lines < MAXLINES)
+
+#Outdoor
+num_lines = file_len(OUTPUT_FILENAME_OUTDOOR)
+entry = '{} {} {}'.format(now, float(file_outdoor.readline()), float(file_outdoor.readline()))
+file_outdoor.close()
+
+file_append(OUTPUT_FILENAME_OUTDOOR, entry, num_lines < MAXLINES)

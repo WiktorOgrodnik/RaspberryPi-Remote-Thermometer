@@ -1,2 +1,7 @@
 src/temps.txt
 src/data_now.txt
+src/node_modules
+src/package-lock.json
+src/pi_now.txt
+src/weather_now.txt
+src/temps_outdoor.txt

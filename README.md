@@ -17,11 +17,14 @@ You will need:
 - Python 3.x
 - Node.js 16.x
 - DHT library
+- Vcgencmd library
+- Python Rest API library
 
 To install python just type
 
 ```bash
 sudo apt update && sudo apt install python3 -y
+sudo apt install pip -y
 ```
 
 To install node.js 16.x on older Raspberries like 1A, 1B or Zero which are based on ARMv6 architecture you need to follow [these scripts](https://github.com/sdesalas/node-pi-zero).
@@ -38,6 +41,8 @@ To install DHT library provided by adadruit you need to type:
 pip3 install adafruit-circuitpython-dht
 sudo apt-get install libgpiod2
 ```
+
+To install DHT library
 
 Now you need to configure crontabs. By default my device will log data to history every hour and update "live" data every 10 minutes (it is done this way because reading data from DHT may take up to a few seconds and we don't want to wait so long on every page refresh).
 

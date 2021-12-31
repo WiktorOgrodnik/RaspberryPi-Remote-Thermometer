@@ -1,5 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
+    padding: 0 5%;
 }
 
 #main-title {
@@ -12,16 +13,38 @@ body {
     margin-left: 30px;
 }
 
+.panel-hidden {
+    display: block;
+    width: 100%;
+    margin: 10px;
+    padding: 0;
+    overflow: hidden;
+}
+
 .panel {
     display: block;
-    margin: 30px auto 0 auto;
-    width: 90%;
+    margin: 10px;
+    width: 100%;
+    background-color: #d1d1d1;
+    border-radius: 15px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.panel:hover {
+    background-color: #bdbdbd;
+}
+
+.panel-half {
+    float: left;
+    margin: 1%;
+    width: 43%;
     background-color: #d1d1d1;
     border-radius: 15px;
     padding: 20px;
 }
 
-.panel:hover {
+.panel-half:hover {
     background-color: #bdbdbd;
 }
 
@@ -38,7 +61,6 @@ body {
 }
 
 #last-update {
-    
     float: right;
 }
 
@@ -47,30 +69,28 @@ body {
     overflow: auto;
 }
 
-.history-item {
-    padding: 10px;
-    background-color: #baa6a6;
-    border-radius: 10px;
-    width: 150px;
-    height: 150px;
-    margin: 5px;
+#chart {
+    display: block;
+}
+
+#computer-image {
+    height: 280px;
+}
+
+#device-panel-left {
+    padding: 20px;
+    width: 50%;
+    height: 300px;
     float: left;
-    text-align: center;
-    transition: all .2s ease-in-out;
 }
 
-.history-item:hover {
-    background-color: #b4a0a0;
-    transform: scale(1.01);
+#device-panel-right {
+    padding: 20px;
+    width: 30%;
+    float: left;
+    font-size: 20pt;
 }
 
-.histemp {
-    margin-right: 10px;
-}
-
-.history-item-top {
-    height: 65px;
-    padding-top: 45px;
+#computer-name {
     font-weight: bold;
-    font-size: 18pt;
 }
