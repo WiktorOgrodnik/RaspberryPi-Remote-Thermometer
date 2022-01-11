@@ -21,7 +21,7 @@ function getDateTime(isoDate) {
 }
 
 http.createServer((req, res) => {
-    (async function () {
+    (async () => {
 
         if (req.url === '/') {
             let html = await fs.promises.readFile('index.html', 'utf-8');
